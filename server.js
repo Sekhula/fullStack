@@ -31,6 +31,8 @@ db.mongoose.connect(db.url, {
 
 const PORT = process.env.PORT || 5000;
 
+require("./app/routes/tutorial.routes")(app);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
