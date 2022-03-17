@@ -4,9 +4,10 @@ const cors = require("cors");
 const app = express();
 const router=require("./app/routes/tutorial.routes");
 const morgan=require('morgan');
-// var corsOptions = {
-//     original: "http://localhost:4000"
-// };
+
+var corsOptions = {
+    original: "http://localhost:4200"
+};
 
 app.use(cors());
 app.use(morgan());
@@ -41,8 +42,6 @@ app.use('/api/tutorials', router);
 // });
 
 const PORT = process.env.PORT || 5000;
-
-
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
